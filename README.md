@@ -1,3 +1,3 @@
 # hakaton44
 ......
-andret gey
+Print('Hello word')
