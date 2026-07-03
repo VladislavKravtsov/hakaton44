@@ -1,3 +1,3 @@
 # hakaton44
 ......
-Print('Hello word')
+HelloWord("Print")
