@@ -1,0 +1,51 @@
+Val-holdout stems known: 18
+
+[р€дова€] C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\–€довые руды: 68 images
+[inference] loaded trained model from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\best_model.pt (val fg_f1=0.681) on cuda
+  10/68 (last took 1.2s)
+  20/68 (last took 1.3s)
+  30/68 (last took 1.2s)
+  40/68 (last took 1.2s)
+  50/68 (last took 1.1s)
+  60/68 (last took 1.2s)
+  68/68 (last took 1.2s)
+
+[труднообогатима€] C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\“руднообогатимые руды: 68 images
+  10/68 (last took 1.2s)
+  20/68 (last took 1.1s)
+  30/68 (last took 1.1s)
+  40/68 (last took 1.1s)
+  50/68 (last took 1.2s)
+  60/68 (last took 1.1s)
+  68/68 (last took 1.2s)
+
+[оталькованна€] C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\ќталькованные руды: 42 images
+  10/42 (last took 1.2s)
+  20/42 (last took 1.3s)
+  30/42 (last took 1.3s)
+  40/42 (last took 1.3s)
+  42/42 (last took 1.2s)
+
+============================================================
+ALL 178 images -- macro F1 = 0.562
+  р€дова€              F1 = 0.612
+  труднообогатима€     F1 = 0.231
+  оталькованна€        F1 = 0.842
+
+VAL-HOLDOUT ONLY (18 images, never seen in training) -- macro F1 = 0.462
+  р€дова€              F1 = 0.308
+  труднообогатима€     F1 = 0.222
+  оталькованна€        F1 = 0.857
+(the honest number for the presentation is the val-holdout one)
+
+Confusion (rows=truth, cols=predicted):
+                             р€дова€    труднообогат    оталькованна
+р€дова€                           56               0              12
+труднообогатима€                  58               9               1
+оталькованна€                      1               1              40
+
+Calibrating thresholds (talc % x thin-share %)...
+Best: macro F1 = 0.737 at talc_threshold=20.0%, thin_share_threshold=20.0%
+(current production rule: talc>10%, thin_share>=50% i.e. thin>=ordinary)
+
+Saved detailed results to grade_eval_results.json

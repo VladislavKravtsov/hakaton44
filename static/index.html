@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Классификация сортов руды</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-0:#0a0c10; --bg-1:#0f1218; --panel:#151922; --panel-2:#1b2029;
+    --border:#262c38; --border-soft:#1e232d;
+    --text:#eef1f6; --muted:#8b93a3; --muted-2:#5f6779;
+    --green:#3ddc84; --red:#ff5c6c; --blue:#4da3ff;
+    --accent:#7c9dff; --accent-2:#a78bfa;
+    --shadow: 0 8px 30px rgba(0,0,0,0.35);
+  }
+  * { box-sizing: border-box; }
+  html, body { height:100%; }
+  body {
+    margin:0; font-family:'Inter', -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1100px 500px at 12% -10%, rgba(124,157,255,0.14), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 55%),
+      var(--bg-0);
+    min-height:100vh;
+  }
+
+  header {
+    padding:22px 28px; border-bottom:1px solid var(--border-soft);
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    backdrop-filter: blur(6px);
+  }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .mark {
+    width:38px; height:38px; border-radius:11px; flex:none;
+    background: conic-gradient(from 200deg, var(--green), var(--blue), var(--accent-2), var(--red), var(--green));
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 6px 18px rgba(124,157,255,0.25);
+  }
+  header h1 { margin:0; font-size:17px; font-weight:700; letter-spacing:-0.01em; }
+  header p { margin:2px 0 0; color:var(--muted); font-size:13px; }
+
+  .legend-top { display:flex; gap:10px; flex-wrap:wrap; }
+  .chip {
+    display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500;
+    padding:6px 12px; border-radius:999px; background:var(--panel-2); border:1px solid var(--border);
+    color:var(--text);
+  }
+  .dot { width:9px; height:9px; border-radius:50%; display:inline-block; box-shadow:0 0 8px currentColor; }
+  .dot.green { background:var(--green); color:var(--green); }
+  .dot.red { background:var(--red); color:var(--red); }
+  .dot.blue { background:var(--blue); color:var(--blue); }
+
+  main { display:grid; grid-template-columns: 360px 1fr; gap:20px; padding:24px 28px; align-items:start; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: linear-gradient(180deg, var(--panel), var(--bg-1));
+    border:1px solid var(--border); border-radius:16px; padding:20px;
+    box-shadow: var(--shadow);
+  }
+  .panel + .panel { margin-top:0; }
+  .panel h2 {
+    margin:0 0 14px; font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--muted-2);
+  }
+
+  .drop {
+    border:1.5px dashed var(--border); border-radius:14px; padding:34px 16px; text-align:center;
+    cursor:pointer; color:var(--muted); transition: all 0.18s ease; background:rgba(255,255,255,0.015);
+  }
+  .drop:hover { border-color:#3a4254; background:rgba(124,157,255,0.04); }
+  .drop.drag { border-color:var(--accent); background:rgba(124,157,255,0.09); color:var(--text); }
+  .drop input { display:none; }
+  .drop .icon { margin-bottom:10px; opacity:0.75; }
+  .drop .main-txt { font-size:14px; font-weight:600; color:var(--text); }
+  .drop .sub-txt { font-size:12px; margin-top:6px; color:var(--muted-2); }
+
+  .legend { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
+
+  .btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#0b0e14; border:none; border-radius:11px; padding:12px 16px; font-weight:700; font-size:14px;
+    cursor:pointer; width:100%; margin-top:14px; transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+    box-shadow: 0 6px 18px rgba(124,157,255,0.22);
+  }
+  .btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(124,157,255,0.30); }
+  .btn:active:not(:disabled) { transform: translateY(0); }
+  .btn:disabled { opacity:0.4; cursor:not-allowed; box-shadow:none; }
+  .btn.secondary {
+    background:var(--panel-2); border:1px solid var(--border); color:var(--text); box-shadow:none; font-weight:600;
+  }
+  .btn.secondary:hover:not(:disabled) { border-color:#3a4254; transform:none; }
+
+  table { width:100%; border-collapse:collapse; margin-top:14px; font-size:13px; }
+  td { padding:9px 4px; border-bottom:1px solid var(--border-soft); color:var(--text); }
+  tr:last-child td { border-bottom:none; }
+  td:first-child { color:var(--muted); }
+  td:last-child { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
+
+  .grade-card {
+    margin-top:16px; padding:14px 16px; border-radius:12px; border:1px solid var(--border);
+    background:var(--panel-2);
+  }
+  .grade { font-size:16px; font-weight:800; display:flex; align-items:center; gap:8px; }
+  .grade .dot { width:10px; height:10px; }
+  .grade.ordinary { color:var(--green); }
+  .grade.thin { color:var(--red); }
+  .grade.talc { color:var(--blue); }
+  .summary { color:var(--muted); font-size:13px; margin-top:8px; line-height:1.55; }
+
+  .viewer {
+    position:relative; overflow:hidden; border:1px solid var(--border); border-radius:16px;
+    height:76vh; background:
+      linear-gradient(180deg, #05070a, #000);
+    box-shadow: var(--shadow);
+  }
+  .viewer img { position:absolute; top:0; left:0; transform-origin: 0 0; user-select:none; -webkit-user-drag:none; }
+  .viewer.grabbing { cursor:grabbing; }
+  .viewer:not(.grabbing) { cursor:grab; }
+
+  .toolbar {
+    display:flex; gap:10px; align-items:center; margin-bottom:14px; flex-wrap:wrap;
+    background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:10px 14px;
+  }
+  .toolbar label {
+    font-size:12.5px; color:var(--muted); display:flex; align-items:center; gap:8px; font-weight:500;
+  }
+  .toolbar input[type=range] { width:130px; accent-color: var(--accent); }
+  .toolbar input[type=checkbox] { accent-color: var(--accent); width:15px; height:15px; }
+  .sep { width:1px; height:20px; background:var(--border); }
+
+  .placeholder {
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:10px; color:var(--muted-2); text-align:center; font-size:14px;
+  }
+  .placeholder svg { opacity:0.5; }
+
+  .status { font-size:12px; color:var(--muted-2); margin-top:10px; min-height:16px; }
+  .status.error { color:var(--red); }
+
+  .brush-chip.active { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+  .progress-wrap { margin-top:10px; height:8px; border-radius:99px; background:var(--panel-2); border:1px solid var(--border); overflow:hidden; }
+  .progress-bar { height:100%; width:0%; border-radius:99px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 0.4s ease; }
+  .spinner-wrap { display:none; align-items:center; gap:10px; padding:14px 4px; color:var(--muted); font-size:13px; }
+  .spinner-wrap.show { display:flex; }
+  .ring {
+    width:16px; height:16px; border-radius:50%; border:2px solid var(--border);
+    border-top-color: var(--accent); animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  #results { display:none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="mark"></div>
+    <div>
+      <h1>Классификация геолого-технологических сортов руды</h1>
+      <p>Автоматическая сегментация панорамных снимков полированных шлифов</p>
+    </div>
+  </div>
+  <div class="legend-top">
+    <span class="chip"><i class="dot green"></i>обычные срастания</span>
+    <span class="chip"><i class="dot red"></i>тонкие срастания</span>
+    <span class="chip"><i class="dot blue"></i>тальк</span>
+  </div>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Загрузка изображения</h2>
+    <div class="drop" id="drop">
+      <div class="icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 16V4M12 4L7 9M12 4l5 5" stroke="#8b93a3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#8b93a3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="main-txt">Перетащите изображение шлифа сюда</div>
+      <div class="sub-txt">или нажмите, чтобы выбрать файл · PNG · JPEG · TIFF, до 300 МБ (панорамы поддерживаются)</div>
+      <input type="file" id="file" accept=".png,.jpg,.jpeg,.tif,.tiff">
+    </div>
+
+    <button class="btn" id="analyzeBtn" disabled>Проанализировать</button>
+    <div class="spinner-wrap" id="spinner"><span class="ring"></span> Обработка изображения…</div>
+    <div class="status" id="status"></div>
+
+    <div id="results">
+      <div class="grade-card">
+        <div class="grade" id="gradeLine"></div>
+        <div class="summary" id="summaryLine"></div>
+      </div>
+      <table id="metricsTable"></table>
+      <button class="btn secondary" id="csvBtn">Скачать CSV</button>
+      <button class="btn secondary" id="pdfBtn">Скачать PDF-отчёт</button>
+    </div>
+
+    <div id="correctionPanel" style="display:none;">
+      <h2 style="margin-top:22px;">Дообучение (active learning)</h2>
+      <div class="status" id="corrStatus"></div>
+      <button class="btn secondary" id="retrainBtn">Дообучить модель на правках</button>
+      <div class="status" id="retrainStatus"></div>
+    </div>
+
+    <h2 style="margin-top:22px;">Пакетная обработка</h2>
+    <button class="btn secondary" id="folderBtn">Выбрать папку с изображениями</button>
+    <input type="file" id="folderInput" webkitdirectory multiple style="display:none;">
+    <div class="status" id="batchStatus"></div>
+    <div class="progress-wrap" id="batchProgressWrap" style="display:none;">
+      <div class="progress-bar" id="batchProgressBar"></div>
+    </div>
+    <button class="btn" id="batchStartBtn" style="display:none;">Обработать</button>
+    <button class="btn" id="batchDownloadBtn" style="display:none;">Скачать результаты (ZIP)</button>
+  </div>
+
+  <div>
+    <div class="toolbar">
+      <label><input type="checkbox" id="toggleOverlay" checked> Показывать маску</label>
+      <div class="sep"></div>
+      <label>Прозрачность <input type="range" id="alphaSlider" min="0" max="100" value="45"></label>
+      <div class="sep"></div>
+      <label>Масштаб <input type="range" id="zoomSlider" min="50" max="1600" value="100"></label>
+      <div class="sep"></div>
+      <button class="btn secondary" style="width:auto; margin-top:0; padding:8px 14px;" id="resetViewBtn">Сбросить вид</button>
+    </div>
+    <div class="toolbar" id="corrToolbar" style="display:none;">
+      <label><input type="checkbox" id="correctionMode"> Рисовать</label>
+      <div class="sep"></div>
+      <span class="chip brush-chip" data-cls="1" style="cursor:pointer;"><i class="dot green"></i>обычные</span>
+      <span class="chip brush-chip" data-cls="2" style="cursor:pointer;"><i class="dot red"></i>тонкие</span>
+      <span class="chip brush-chip" data-cls="3" style="cursor:pointer;"><i class="dot blue"></i>тальк</span>
+      <span class="chip brush-chip" data-cls="0" style="cursor:pointer;"><i class="dot" style="background:#555;"></i>фон</span>
+      <span class="chip brush-chip" data-cls="erase" style="cursor:pointer;">⌫ ластик</span>
+      <div class="sep"></div>
+      <label>Кисть <input type="range" id="brushSize" min="4" max="80" value="20"></label>
+      <div class="sep"></div>
+      <button class="btn secondary" style="width:auto; margin-top:0; padding:8px 14px;" id="clearCorrBtn">Очистить</button>
+      <button class="btn secondary" style="width:auto; margin-top:0; padding:8px 14px;" id="recomputeBtn">Пересчитать статистику</button>
+      <button class="btn" style="width:auto; margin-top:0; padding:8px 14px;" id="saveCorrBtn">Сохранить исправление</button>
+    </div>
+    <div class="viewer" id="viewer">
+      <div class="placeholder" id="viewerPlaceholder">
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="3" stroke="#5f6779" stroke-width="1.5"/>
+          <circle cx="9" cy="9" r="2" stroke="#5f6779" stroke-width="1.5"/>
+          <path d="M21 15l-5-5-9 9" stroke="#5f6779" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>Загрузите изображение, чтобы увидеть результат</div>
+      </div>
+      <img id="baseImg" style="display:none;">
+      <img id="overlayImg" style="display:none;">
+      <canvas id="corrCanvas" style="position:absolute; top:0; left:0; transform-origin:0 0; display:none;"></canvas>
+    </div>
+  </div>
+</main>
+
+<script>
+const dropEl = document.getElementById('drop');
+const fileInput = document.getElementById('file');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const spinner = document.getElementById('spinner');
+const statusEl = document.getElementById('status');
+const resultsEl = document.getElementById('results');
+const gradeLine = document.getElementById('gradeLine');
+const summaryLine = document.getElementById('summaryLine');
+const metricsTable = document.getElementById('metricsTable');
+const csvBtn = document.getElementById('csvBtn');
+
+const viewer = document.getElementById('viewer');
+const viewerPlaceholder = document.getElementById('viewerPlaceholder');
+const baseImg = document.getElementById('baseImg');
+const overlayImg = document.getElementById('overlayImg');
+const toggleOverlay = document.getElementById('toggleOverlay');
+const alphaSlider = document.getElementById('alphaSlider');
+const zoomSlider = document.getElementById('zoomSlider');
+const resetViewBtn = document.getElementById('resetViewBtn');
+
+let currentFile = null;
+let pan = { x: 0, y: 0, dragging: false, lastX: 0, lastY: 0 };
+
+['dragenter', 'dragover'].forEach(ev => dropEl.addEventListener(ev, e => { e.preventDefault(); dropEl.classList.add('drag'); }));
+['dragleave', 'drop'].forEach(ev => dropEl.addEventListener(ev, e => { e.preventDefault(); dropEl.classList.remove('drag'); }));
+dropEl.addEventListener('drop', e => { if (e.dataTransfer.files.length) setFile(e.dataTransfer.files[0]); });
+dropEl.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', () => { if (fileInput.files.length) setFile(fileInput.files[0]); });
+
+function setFile(file) {
+  currentFile = file;
+  analyzeBtn.disabled = false;
+  statusEl.classList.remove('error');
+  statusEl.textContent = `Выбран файл: ${file.name} (${(file.size/1e6).toFixed(1)} МБ)`;
+  const url = URL.createObjectURL(file);
+  baseImg.src = url;
+  baseImg.style.display = 'block';
+  overlayImg.style.display = 'none';
+  viewerPlaceholder.style.display = 'none';
+  resultsEl.style.display = 'none';
+  document.getElementById('corrToolbar').style.display = 'none';
+  corrCanvas.style.display = 'none';
+  resetView();
+}
+
+analyzeBtn.addEventListener('click', async () => {
+  if (!currentFile) return;
+  spinner.classList.add('show');
+  analyzeBtn.disabled = true;
+  statusEl.classList.remove('error');
+  statusEl.textContent = '';
+
+  const form = new FormData();
+  form.append('file', currentFile);
+  try {
+    const resp = await fetch('/api/analyze', { method: 'POST', body: form });
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({detail: 'Ошибка сервера'}));
+      throw new Error(err.detail || 'Ошибка сервера');
+    }
+    const data = await resp.json();
+    renderResult(data);
+  } catch (e) {
+    statusEl.classList.add('error');
+    statusEl.textContent = 'Ошибка: ' + e.message;
+  } finally {
+    spinner.classList.remove('show');
+    analyzeBtn.disabled = false;
+  }
+});
+
+let currentMaskBase64 = null;
+let analyzedSize = null;
+
+function renderResult(data) {
+  currentMaskBase64 = data.mask_png_base64;
+  analyzedSize = data.image_size;
+  setupCorrectionCanvas();
+  document.getElementById('correctionPanel').style.display = 'block';
+  document.getElementById('corrToolbar').style.display = 'flex';
+  overlayImg.src = 'data:image/png;base64,' + data.overlay_png_base64;
+  // The server downscales big panoramas before analysis, so the overlay can
+  // be smaller than the original shown underneath -- stretch it to the base
+  // image's natural size so the two always align pixel-for-pixel on screen.
+  overlayImg.style.width = baseImg.naturalWidth + 'px';
+  overlayImg.style.height = baseImg.naturalHeight + 'px';
+  overlayImg.style.display = toggleOverlay.checked ? 'block' : 'none';
+  statusEl.classList.remove('error');
+  statusEl.textContent = `Обработано за ${data.processing_time_sec}s · ${data.image_size.width}×${data.image_size.height}px` +
+      (data.downscaled ? ` (уменьшено до масштаба ${data.scale_applied})` : '');
+
+  updateMetricsUI(data.metrics);
+  resultsEl.style.display = 'block';
+}
+
+function updateMetricsUI(m) {
+  const gradeClass = m.grade === 'оталькованная' ? 'talc' : (m.grade === 'труднообогатимая' ? 'thin' : 'ordinary');
+  gradeLine.innerHTML = `<span class="dot ${gradeClass}"></span> Сорт руды: ${m.grade}`;
+  gradeLine.className = 'grade ' + gradeClass;
+  summaryLine.textContent = m.summary;
+
+  metricsTable.innerHTML = '';
+  const rows = [
+    ['Доля сульфидов (всего)', m.pct_ore_total + '%'],
+    ['— обычные срастания', m.pct_ordinary + '%'],
+    ['— тонкие срастания', m.pct_thin + '%'],
+    ['Доля талька', m.pct_talc + '%'],
+    ['Обычные / все срастания', m.ordinary_share_of_ore + '%'],
+    ['Тонкие / все срастания', m.thin_share_of_ore + '%'],
+  ];
+  for (const [label, val] of rows) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${label}</td><td>${val}</td>`;
+    metricsTable.appendChild(tr);
+  }
+}
+
+async function downloadResult(endpoint, extension) {
+  if (!currentFile) return;
+  const form = new FormData();
+  form.append('file', currentFile);
+  const resp = await fetch(endpoint, { method: 'POST', body: form });
+  if (!resp.ok) {
+    statusEl.classList.add('error');
+    statusEl.textContent = 'Ошибка выгрузки: ' + resp.status;
+    return;
+  }
+  const blob = await resp.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = currentFile.name.replace(/\.[^.]+$/, '') + extension;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+csvBtn.addEventListener('click', () => downloadResult('/api/analyze/csv', '_metrics.csv'));
+document.getElementById('pdfBtn').addEventListener('click', () => downloadResult('/api/analyze/pdf', '_report.pdf'));
+
+toggleOverlay.addEventListener('change', () => {
+  overlayImg.style.display = (toggleOverlay.checked && overlayImg.src) ? 'block' : 'none';
+});
+alphaSlider.addEventListener('input', () => {
+  overlayImg.style.opacity = alphaSlider.value / 100;
+  corrCanvas.style.opacity = alphaSlider.value / 100;
+});
+
+// Slider value 100 means "the whole image fits in the viewer" (fitScale is
+// recomputed per image); larger values zoom in from there. Without this,
+// natural-pixel-size rendering left big photos impossible to see fully.
+let fitScale = 1;
+
+function computeFitScale() {
+  if (!baseImg.naturalWidth) return;
+  const vw = viewer.clientWidth, vh = viewer.clientHeight;
+  fitScale = Math.min(vw / baseImg.naturalWidth, vh / baseImg.naturalHeight);
+}
+
+function applyTransform() {
+  const scale = fitScale * zoomSlider.value / 100;
+  const t = `translate(${pan.x}px, ${pan.y}px) scale(${scale})`;
+  baseImg.style.transform = t;
+  overlayImg.style.transform = t;
+  corrCanvas.style.transform = t;
+}
+
+function resetView() {
+  computeFitScale();
+  zoomSlider.value = 100;
+  // center the fitted image in the viewer
+  const w = baseImg.naturalWidth * fitScale, h = baseImg.naturalHeight * fitScale;
+  pan = { x: (viewer.clientWidth - w) / 2, y: (viewer.clientHeight - h) / 2,
+          dragging: false, lastX: 0, lastY: 0 };
+  applyTransform();
+}
+
+baseImg.addEventListener('load', resetView);
+window.addEventListener('resize', () => { computeFitScale(); applyTransform(); });
+zoomSlider.addEventListener('input', applyTransform);
+resetViewBtn.addEventListener('click', resetView);
+
+viewer.addEventListener('wheel', e => {
+  e.preventDefault();
+  let z = parseInt(zoomSlider.value, 10);
+  const step = z >= 400 ? 50 : 15;
+  z = Math.min(1600, Math.max(50, z - Math.sign(e.deltaY) * step));
+  zoomSlider.value = z;
+  applyTransform();
+});
+// ------------------- manual mask correction -------------------
+const corrCanvas = document.getElementById('corrCanvas');
+const corrCtx = corrCanvas.getContext('2d');
+const correctionMode = document.getElementById('correctionMode');
+const brushSize = document.getElementById('brushSize');
+const corrStatus = document.getElementById('corrStatus');
+const retrainStatus = document.getElementById('retrainStatus');
+
+const BRUSH_COLORS = { 0: 'rgb(0,0,0)', 1: 'rgb(0,255,0)', 2: 'rgb(255,0,0)', 3: 'rgb(0,0,255)' };
+let brushClass = 1;
+let painting = false;
+let hasPaint = false;
+
+document.querySelectorAll('.brush-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.brush-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    brushClass = chip.dataset.cls === 'erase' ? 'erase' : parseInt(chip.dataset.cls, 10);
+  });
+});
+document.querySelector('.brush-chip[data-cls="1"]').classList.add('active');
+
+function setupCorrectionCanvas() {
+  if (!analyzedSize) return;
+  corrCanvas.width = analyzedSize.width;
+  corrCanvas.height = analyzedSize.height;
+  corrCtx.clearRect(0, 0, corrCanvas.width, corrCanvas.height);
+  hasPaint = false;
+  // CSS-stretch to the displayed base image size, same as the overlay
+  corrCanvas.style.width = baseImg.naturalWidth + 'px';
+  corrCanvas.style.height = baseImg.naturalHeight + 'px';
+  corrCanvas.style.opacity = alphaSlider.value / 100;
+  corrCanvas.style.display = 'block';
+  applyTransform();
+}
+
+function screenToCanvas(e) {
+  const rect = viewer.getBoundingClientRect();
+  const scale = fitScale * zoomSlider.value / 100;
+  const xDisp = ((e.clientX - rect.left) - pan.x) / scale;   // in base-image px
+  const yDisp = ((e.clientY - rect.top) - pan.y) / scale;
+  return {
+    x: xDisp * (corrCanvas.width / baseImg.naturalWidth),
+    y: yDisp * (corrCanvas.height / baseImg.naturalHeight),
+  };
+}
+
+function paintAt(e) {
+  const p = screenToCanvas(e);
+  const scale = fitScale * zoomSlider.value / 100;
+  const r = (brushSize.value / scale) * (corrCanvas.width / baseImg.naturalWidth) / 2;
+  if (brushClass === 'erase') {
+    // remove painted correction, revealing the model's mask underneath
+    corrCtx.globalCompositeOperation = 'destination-out';
+  } else {
+    corrCtx.globalCompositeOperation = 'source-over';
+    corrCtx.fillStyle = BRUSH_COLORS[brushClass];
+  }
+  corrCtx.beginPath();
+  corrCtx.arc(p.x, p.y, Math.max(r, 1), 0, Math.PI * 2);
+  corrCtx.fill();
+  corrCtx.globalCompositeOperation = 'source-over';
+  hasPaint = true;
+}
+
+document.getElementById('clearCorrBtn').addEventListener('click', () => {
+  corrCtx.clearRect(0, 0, corrCanvas.width, corrCanvas.height);
+  hasPaint = false;
+  corrStatus.textContent = '';
+});
+
+async function correctionFormData(includeFile) {
+  const form = new FormData();
+  if (includeFile) form.append('file', currentFile);
+  const maskBlob = await (await fetch('data:image/png;base64,' + currentMaskBase64)).blob();
+  const corrBlob = await new Promise(res => corrCanvas.toBlob(res, 'image/png'));
+  form.append('mask_png', maskBlob, 'mask.png');
+  form.append('corrections_png', corrBlob, 'corr.png');
+  return form;
+}
+
+document.getElementById('recomputeBtn').addEventListener('click', async () => {
+  if (!currentMaskBase64) return;
+  if (!hasPaint) { corrStatus.textContent = 'Нет правок — статистика без изменений.'; return; }
+  corrStatus.textContent = 'Пересчёт...';
+  try {
+    const resp = await fetch('/api/recompute', { method: 'POST', body: await correctionFormData(false) });
+    if (!resp.ok) throw new Error((await resp.json().catch(() => ({}))).detail || resp.status);
+    const d = await resp.json();
+    updateMetricsUI(d.metrics);
+    corrStatus.textContent = `Статистика пересчитана с учётом ${d.painted_pixels} пикс. правок (не сохранено).`;
+  } catch (e) {
+    corrStatus.textContent = 'Ошибка пересчёта: ' + e.message;
+  }
+});
+
+document.getElementById('saveCorrBtn').addEventListener('click', async () => {
+  if (!currentFile || !currentMaskBase64) return;
+  if (!hasPaint) { corrStatus.textContent = 'Сначала нарисуйте правки кистью.'; return; }
+  corrStatus.textContent = 'Сохранение...';
+  try {
+    const resp = await fetch('/api/corrections', { method: 'POST', body: await correctionFormData(true) });
+    if (!resp.ok) throw new Error((await resp.json().catch(() => ({}))).detail || resp.status);
+    const d = await resp.json();
+    if (d.metrics) updateMetricsUI(d.metrics);
+    corrStatus.textContent = `Сохранено (${d.painted_pixels} пикс. правок), статистика обновлена. ` +
+      `Всего примеров для дообучения: ${d.corrections_total}.`;
+  } catch (e) {
+    corrStatus.textContent = 'Ошибка: ' + e.message;
+  }
+});
+
+document.getElementById('retrainBtn').addEventListener('click', async () => {
+  retrainStatus.textContent = 'Запуск дообучения...';
+  try {
+    const resp = await fetch('/api/retrain', { method: 'POST' });
+    if (!resp.ok) throw new Error((await resp.json().catch(() => ({}))).detail || resp.status);
+    pollRetrain();
+  } catch (e) {
+    retrainStatus.textContent = 'Ошибка: ' + e.message;
+  }
+});
+
+async function pollRetrain() {
+  const resp = await fetch('/api/retrain/status');
+  const s = await resp.json();
+  if (s.running) {
+    retrainStatus.textContent = 'Дообучение идёт... ' + (s.log_tail ? s.log_tail.split('\n').pop() : '');
+    setTimeout(pollRetrain, 5000);
+  } else {
+    retrainStatus.textContent = 'Дообучение завершено — новая модель подхватится при следующем анализе. ' +
+      (s.log_tail ? s.log_tail.split('\n').pop() : '');
+  }
+}
+
+// ------------------- batch processing -------------------
+const folderBtn = document.getElementById('folderBtn');
+const folderInput = document.getElementById('folderInput');
+const batchStatus = document.getElementById('batchStatus');
+const batchStartBtn = document.getElementById('batchStartBtn');
+const batchDownloadBtn = document.getElementById('batchDownloadBtn');
+const batchProgressWrap = document.getElementById('batchProgressWrap');
+const batchProgressBar = document.getElementById('batchProgressBar');
+
+const IMG_RE = /\.(png|jpe?g|bmp|tiff?)$/i;
+let batchFiles = [];
+let batchJobId = null;
+
+folderBtn.addEventListener('click', () => folderInput.click());
+
+folderInput.addEventListener('change', () => {
+  batchFiles = Array.from(folderInput.files).filter(f => IMG_RE.test(f.name));
+  batchJobId = null;
+  batchDownloadBtn.style.display = 'none';
+  batchProgressWrap.style.display = 'none';
+  if (!batchFiles.length) {
+    batchStatus.textContent = 'В выбранной папке нет изображений.';
+    batchStartBtn.style.display = 'none';
+    return;
+  }
+  const totalMb = batchFiles.reduce((s, f) => s + f.size, 0) / 1e6;
+  batchStatus.textContent = `Найдено ${batchFiles.length} изображений (${totalMb.toFixed(0)} МБ).`;
+  batchStartBtn.style.display = 'block';
+});
+
+batchStartBtn.addEventListener('click', async () => {
+  if (!batchFiles.length) return;
+  batchStartBtn.disabled = true;
+  batchStatus.textContent = 'Загрузка файлов на сервер...';
+  const form = new FormData();
+  for (const f of batchFiles) form.append('files', f, f.name);
+  try {
+    const resp = await fetch('/api/batch', { method: 'POST', body: form });
+    if (!resp.ok) throw new Error((await resp.json().catch(() => ({}))).detail || 'Ошибка сервера');
+    const data = await resp.json();
+    batchJobId = data.job_id;
+    batchProgressWrap.style.display = 'block';
+    pollBatch();
+  } catch (e) {
+    batchStatus.textContent = 'Ошибка: ' + e.message;
+    batchStartBtn.disabled = false;
+  }
+});
+
+async function pollBatch() {
+  if (!batchJobId) return;
+  try {
+    const resp = await fetch(`/api/batch/${batchJobId}/status`);
+    const s = await resp.json();
+    const pct = s.total ? Math.round(100 * s.done / s.total) : 0;
+    batchProgressBar.style.width = pct + '%';
+    if (s.finished) {
+      batchStartBtn.disabled = false;
+      batchStartBtn.style.display = 'none';
+      if (s.error) {
+        batchStatus.textContent = 'Ошибка обработки: ' + s.error;
+      } else {
+        batchStatus.textContent = `Готово: обработано ${s.done} из ${s.total}.`;
+        batchDownloadBtn.style.display = 'block';
+      }
+      return;
+    }
+    batchStatus.textContent = `Обработка ${s.done}/${s.total}: ${s.current}`;
+    setTimeout(pollBatch, 1000);
+  } catch (e) {
+    setTimeout(pollBatch, 2000);
+  }
+}
+
+batchDownloadBtn.addEventListener('click', () => {
+  if (batchJobId) window.location.href = `/api/batch/${batchJobId}/download`;
+});
+
+viewer.addEventListener('mousedown', e => {
+  if (correctionMode.checked && corrCanvas.style.display !== 'none') {
+    painting = true;
+    paintAt(e);
+    return;
+  }
+  pan.dragging = true; pan.lastX = e.clientX; pan.lastY = e.clientY; viewer.classList.add('grabbing');
+});
+window.addEventListener('mouseup', () => { painting = false; pan.dragging = false; viewer.classList.remove('grabbing'); });
+window.addEventListener('mousemove', e => {
+  if (painting) { paintAt(e); return; }
+  if (!pan.dragging) return;
+  pan.x += e.clientX - pan.lastX;
+  pan.y += e.clientY - pan.lastY;
+  pan.lastX = e.clientX;
+  pan.lastY = e.clientY;
+  applyTransform();
+});
+</script>
+</body>
+</html>

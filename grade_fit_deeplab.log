@@ -1,0 +1,64 @@
+(removed old grade_tree.joblib so feature extraction is unbiased)
+[рядовая] 68 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Рядовые руды
+[inference] loaded trained model from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\best_model.pt (val fg_f1=0.591) on cuda
+  20/68
+  40/68
+  60/68
+  68/68
+[труднообогатимая] 68 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Труднообогатимые руды
+  20/68
+  40/68
+  60/68
+  68/68
+[оталькованная] 42 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Оталькованные руды
+  20/42
+  40/42
+  42/42
+Extracted features for 178 images in 177s -> C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\grade_features.json
+
+5-fold cross-validation (depth=3):
+  fold 1: macro F1 = 0.731
+  fold 2: macro F1 = 0.842
+  fold 3: macro F1 = 0.815
+  fold 4: macro F1 = 0.771
+  fold 5: macro F1 = 0.682
+  CV mean macro F1 = 0.768 +- 0.058
+
+Val-holdout (38 images): macro F1 = 0.830
+  рядовая: 0.774
+  труднообогатимая: 0.769
+  оталькованная: 0.947
+
+Final tree on all data (fit quality, optimistic): macro F1 = 0.827
+  рядовая: 0.789
+  труднообогатимая: 0.763
+  оталькованная: 0.930
+
+Learned rules (human-readable):
+|--- pct_talc <= 5.87
+|   |--- small_grain_ore_share <= 8.61
+|   |   |--- pct_ore_total <= 22.72
+|   |   |   |--- class: оталькованная
+|   |   |--- pct_ore_total >  22.72
+|   |   |   |--- class: рядовая
+|   |--- small_grain_ore_share >  8.61
+|   |   |--- median_grain_area <= 59.75
+|   |   |   |--- class: труднообогатимая
+|   |   |--- median_grain_area >  59.75
+|   |   |   |--- class: труднообогатимая
+|--- pct_talc >  5.87
+|   |--- pct_talc <= 12.96
+|   |   |--- pct_talc <= 6.48
+|   |   |   |--- class: оталькованная
+|   |   |--- pct_talc >  6.48
+|   |   |   |--- class: рядовая
+|   |--- pct_talc >  12.96
+|   |   |--- pct_ore_total <= 49.81
+|   |   |   |--- class: оталькованная
+|   |   |--- pct_ore_total >  49.81
+|   |   |   |--- class: оталькованная
+
+Talc hard-override threshold (estimated share): >49.5%
+
+Saved grade classifier to C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\grade_tree.joblib
+inference.py will pick it up automatically (restart the web server).

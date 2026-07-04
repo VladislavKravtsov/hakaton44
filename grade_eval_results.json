@@ -1,0 +1,1620 @@
+{
+  "n_images": 178,
+  "macro_f1_all": 0.5616321172835409,
+  "per_class_f1_all": {
+    "рядовая": 0.6120218579234973,
+    "труднообогатимая": 0.23076923076923078,
+    "оталькованная": 0.8421052631578947
+  },
+  "macro_f1_val_holdout": 0.46235246235246236,
+  "n_val_holdout": 18,
+  "calibrated": {
+    "macro_f1": 0.7366676791198407,
+    "talc_thr": 20.0,
+    "thin_share_thr": 20.0
+  },
+  "rows": [
+    {
+      "file": "2539589-1.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.74,
+      "thin_share": 9.64,
+      "ordinary_share": 90.36,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539589-2.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 2.82,
+      "thin_share": 9.36,
+      "ordinary_share": 90.64,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539590-1.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 34.14,
+      "thin_share": 4.84,
+      "ordinary_share": 95.16,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2544791-1 10x аншлиф.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 36.99,
+      "thin_share": 1.05,
+      "ordinary_share": 98.95,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2544791-2 10x аншлиф.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.91,
+      "thin_share": 1.2,
+      "ordinary_share": 98.8,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2544791-2 20x аншлиф.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 0.11,
+      "ordinary_share": 99.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2544793-2 10x аншлиф.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.32,
+      "thin_share": 3.32,
+      "ordinary_share": 96.68,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548036 5x 1.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.33,
+      "thin_share": 3.57,
+      "ordinary_share": 96.43,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548036 5x 2.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 34.0,
+      "thin_share": 5.48,
+      "ordinary_share": 94.52,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548037 10x 2.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 6.94,
+      "thin_share": 12.93,
+      "ordinary_share": 87.07,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548037 10x 3.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 11.63,
+      "ordinary_share": 88.37,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550496-1 20x.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 7.81,
+      "ordinary_share": 92.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550501-1 20x.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 4.28,
+      "ordinary_share": 95.72,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550501-2 10x.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.09,
+      "thin_share": 2.66,
+      "ordinary_share": 97.34,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550501-3 10x (1).JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.35,
+      "thin_share": 3.01,
+      "ordinary_share": 96.99,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550506-1 5x.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 3.7,
+      "thin_share": 6.75,
+      "ordinary_share": 93.25,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550506-2 10x.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 3.47,
+      "ordinary_share": 96.53,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652979 10x 5.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.95,
+      "thin_share": 5.62,
+      "ordinary_share": 94.38,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652981 10x 5.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 10.8,
+      "thin_share": 5.89,
+      "ordinary_share": 94.11,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652982 5x 16.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 25.26,
+      "thin_share": 4.54,
+      "ordinary_share": 95.46,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652982 5x 2.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.73,
+      "thin_share": 1.11,
+      "ordinary_share": 98.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652982 5x 4.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.03,
+      "thin_share": 0.33,
+      "ordinary_share": 99.67,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652982 5x 7.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.86,
+      "thin_share": 1.11,
+      "ordinary_share": 98.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652982 5x 9.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 3.27,
+      "thin_share": 3.68,
+      "ordinary_share": 96.32,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2012.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 18.52,
+      "thin_share": 1.55,
+      "ordinary_share": 98.45,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2059.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.55,
+      "thin_share": 6.14,
+      "ordinary_share": 93.86,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN2064.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 10.88,
+      "ordinary_share": 89.12,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2065.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.57,
+      "thin_share": 12.64,
+      "ordinary_share": 87.36,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2066.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.43,
+      "thin_share": 7.17,
+      "ordinary_share": 92.83,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2114.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.31,
+      "thin_share": 4.93,
+      "ordinary_share": 95.07,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2121.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 3.19,
+      "thin_share": 3.85,
+      "ordinary_share": 96.15,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2134.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.67,
+      "thin_share": 13.42,
+      "ordinary_share": 86.58,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2151.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 7.22,
+      "ordinary_share": 92.78,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2154.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.24,
+      "thin_share": 6.36,
+      "ordinary_share": 93.64,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2174.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 5.88,
+      "ordinary_share": 94.12,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2176.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 6.57,
+      "ordinary_share": 93.43,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2191.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 3.06,
+      "thin_share": 29.95,
+      "ordinary_share": 70.05,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2258.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 15.38,
+      "ordinary_share": 84.62,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2260.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 16.59,
+      "ordinary_share": 83.41,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2261.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 7.85,
+      "ordinary_share": 92.15,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2265.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 8.32,
+      "thin_share": 17.38,
+      "ordinary_share": 82.62,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN3800.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 11.23,
+      "thin_share": 29.81,
+      "ordinary_share": 70.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3801.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.11,
+      "thin_share": 12.28,
+      "ordinary_share": 87.72,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3802.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.78,
+      "thin_share": 12.15,
+      "ordinary_share": 87.85,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3804.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 12.31,
+      "thin_share": 25.19,
+      "ordinary_share": 74.81,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3805.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 19.58,
+      "thin_share": 12.01,
+      "ordinary_share": 87.99,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3820.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 15.17,
+      "thin_share": 5.3,
+      "ordinary_share": 94.7,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3821.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 28.64,
+      "thin_share": 2.54,
+      "ordinary_share": 97.46,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3824.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 2.41,
+      "thin_share": 3.88,
+      "ordinary_share": 96.12,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3827.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.07,
+      "thin_share": 15.49,
+      "ordinary_share": 84.51,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3831.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.76,
+      "thin_share": 1.09,
+      "ordinary_share": 98.91,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3845.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 0.75,
+      "ordinary_share": 99.25,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3859.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 1.58,
+      "ordinary_share": 98.42,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3866.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.17,
+      "thin_share": 4.11,
+      "ordinary_share": 95.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3867.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.23,
+      "thin_share": 10.15,
+      "ordinary_share": 89.85,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3871.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 5.29,
+      "ordinary_share": 94.71,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3872.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.26,
+      "thin_share": 6.49,
+      "ordinary_share": 93.51,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3874.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.05,
+      "thin_share": 1.08,
+      "ordinary_share": 98.92,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3875.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 1.65,
+      "ordinary_share": 98.35,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3899.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 3.45,
+      "thin_share": 3.38,
+      "ordinary_share": 96.62,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3902.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.71,
+      "thin_share": 0.84,
+      "ordinary_share": 99.16,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4051.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.04,
+      "thin_share": 9.63,
+      "ordinary_share": 90.37,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4054.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 9.2,
+      "thin_share": 10.59,
+      "ordinary_share": 89.41,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5019.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 1.36,
+      "thin_share": 2.91,
+      "ordinary_share": 97.09,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5024.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.08,
+      "thin_share": 1.31,
+      "ordinary_share": 98.69,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5025.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 2.17,
+      "ordinary_share": 97.83,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5179.JPG",
+      "truth": "рядовая",
+      "predicted": "рядовая",
+      "pct_talc": 0.29,
+      "thin_share": 6.02,
+      "ordinary_share": 93.98,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5182.JPG",
+      "truth": "рядовая",
+      "predicted": "оталькованная",
+      "pct_talc": 30.64,
+      "thin_share": 1.37,
+      "ordinary_share": 98.63,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2539439-3.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.92,
+      "thin_share": 64.53,
+      "ordinary_share": 35.47,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539444-1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.32,
+      "thin_share": 10.85,
+      "ordinary_share": 89.15,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2539446-2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.01,
+      "thin_share": 51.92,
+      "ordinary_share": 48.08,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539448-2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 2.29,
+      "ordinary_share": 97.71,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2539448-3.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.04,
+      "thin_share": 7.03,
+      "ordinary_share": 92.97,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539586-1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.0,
+      "thin_share": 54.6,
+      "ordinary_share": 45.4,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539586-2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 40.76,
+      "ordinary_share": 59.24,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539586-3.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 24.74,
+      "ordinary_share": 75.26,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2539588-2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 44.6,
+      "ordinary_share": 55.4,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2544796-2 20x аншлиф.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.38,
+      "thin_share": 6.81,
+      "ordinary_share": 93.19,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2548044 10x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 10.03,
+      "ordinary_share": 89.97,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548044 10x 2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 2.12,
+      "thin_share": 26.89,
+      "ordinary_share": 73.11,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548045 10x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 7.1,
+      "ordinary_share": 92.9,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2548045 20x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.03,
+      "thin_share": 1.74,
+      "ordinary_share": 98.26,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550376-2 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 4.28,
+      "thin_share": 72.11,
+      "ordinary_share": 27.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550379-1 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 30.74,
+      "ordinary_share": 69.26,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550383-2 20x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.08,
+      "thin_share": 6.78,
+      "ordinary_share": 93.22,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550483-2 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 12.74,
+      "ordinary_share": 87.26,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550492- 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.2,
+      "thin_share": 12.68,
+      "ordinary_share": 87.32,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550492-1 20x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.07,
+      "thin_share": 25.1,
+      "ordinary_share": 74.9,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550494-1 20x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 44.52,
+      "ordinary_share": 55.48,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550496-3 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "оталькованная",
+      "pct_talc": 11.32,
+      "thin_share": 17.2,
+      "ordinary_share": 82.8,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550500-1 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.95,
+      "thin_share": 6.05,
+      "ordinary_share": 93.95,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550500-2 10x.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.76,
+      "thin_share": 5.79,
+      "ordinary_share": 94.21,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652970 10x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.32,
+      "thin_share": 39.48,
+      "ordinary_share": 60.52,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652970 5x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.52,
+      "thin_share": 44.86,
+      "ordinary_share": 55.14,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652973 10x 1.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 39.53,
+      "ordinary_share": 60.47,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652973 10x 3.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 21.87,
+      "ordinary_share": 78.13,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652976 10x 2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 8.45,
+      "ordinary_share": 91.55,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652976 10x 3.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 25.33,
+      "ordinary_share": 74.67,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652979 10x 10.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.98,
+      "thin_share": 12.09,
+      "ordinary_share": 87.91,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2652980 10x 2.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.01,
+      "thin_share": 51.95,
+      "ordinary_share": 48.05,
+      "in_val_holdout": true
+    },
+    {
+      "file": "2652980 10x 4.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.58,
+      "thin_share": 40.81,
+      "ordinary_share": 59.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2652980 10x 8.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.0,
+      "thin_share": 53.41,
+      "ordinary_share": 46.59,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2043.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 2.16,
+      "ordinary_share": 97.84,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2046.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 7.78,
+      "ordinary_share": 92.22,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2049.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.32,
+      "thin_share": 4.91,
+      "ordinary_share": 95.09,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2062.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.4,
+      "thin_share": 12.66,
+      "ordinary_share": 87.34,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2128.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.91,
+      "thin_share": 26.49,
+      "ordinary_share": 73.51,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2150.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.28,
+      "thin_share": 18.01,
+      "ordinary_share": 81.99,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2155.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.31,
+      "thin_share": 15.64,
+      "ordinary_share": 84.36,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN2157.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 3.67,
+      "thin_share": 58.68,
+      "ordinary_share": 41.32,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2158.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.05,
+      "thin_share": 26.08,
+      "ordinary_share": 73.92,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2160.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.02,
+      "thin_share": 15.64,
+      "ordinary_share": 84.36,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2166.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 1.93,
+      "thin_share": 21.98,
+      "ordinary_share": 78.02,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2236.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.26,
+      "thin_share": 30.29,
+      "ordinary_share": 69.71,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2244.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 17.27,
+      "ordinary_share": 82.73,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2249.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 14.11,
+      "ordinary_share": 85.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2250.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.0,
+      "thin_share": 67.86,
+      "ordinary_share": 32.14,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN2256.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.06,
+      "thin_share": 7.57,
+      "ordinary_share": 92.43,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3830.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 43.33,
+      "ordinary_share": 56.67,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3833.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 7.37,
+      "thin_share": 34.53,
+      "ordinary_share": 65.47,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3836.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 3.01,
+      "ordinary_share": 96.99,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4055.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "труднообогатимая",
+      "pct_talc": 0.0,
+      "thin_share": 50.16,
+      "ordinary_share": 49.84,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4058.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.06,
+      "thin_share": 32.18,
+      "ordinary_share": 67.82,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4636.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.96,
+      "thin_share": 7.56,
+      "ordinary_share": 92.44,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4748.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.17,
+      "thin_share": 13.99,
+      "ordinary_share": 86.01,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4749.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.02,
+      "thin_share": 25.57,
+      "ordinary_share": 74.43,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4751.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 22.16,
+      "ordinary_share": 77.84,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4770.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.7,
+      "thin_share": 35.56,
+      "ordinary_share": 64.44,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4785.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 38.85,
+      "ordinary_share": 61.15,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4788.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.13,
+      "thin_share": 12.83,
+      "ordinary_share": 87.17,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4789.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 13.18,
+      "ordinary_share": 86.82,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4790.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.0,
+      "thin_share": 7.07,
+      "ordinary_share": 92.93,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5037.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.08,
+      "thin_share": 5.84,
+      "ordinary_share": 94.16,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN5039.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.04,
+      "thin_share": 5.38,
+      "ordinary_share": 94.62,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5049.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 0.01,
+      "thin_share": 15.81,
+      "ordinary_share": 84.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5181.JPG",
+      "truth": "труднообогатимая",
+      "predicted": "рядовая",
+      "pct_talc": 3.74,
+      "thin_share": 7.0,
+      "ordinary_share": 93.0,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550374-2 10х.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 46.03,
+      "thin_share": 5.04,
+      "ordinary_share": 94.96,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550375-1 10х.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 46.24,
+      "thin_share": 1.75,
+      "ordinary_share": 98.25,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550375-3 5х.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 60.05,
+      "thin_share": 8.03,
+      "ordinary_share": 91.97,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550376-1 5x.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 31.66,
+      "thin_share": 22.54,
+      "ordinary_share": 77.46,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550376-2 10x.JPG",
+      "truth": "оталькованная",
+      "predicted": "труднообогатимая",
+      "pct_talc": 4.28,
+      "thin_share": 72.11,
+      "ordinary_share": 27.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550377-1 5x.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 70.94,
+      "thin_share": 6.11,
+      "ordinary_share": 93.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550378-1 5x.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 90.6,
+      "thin_share": 3.63,
+      "ordinary_share": 96.37,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550381-1 10x.JPG",
+      "truth": "оталькованная",
+      "predicted": "рядовая",
+      "pct_talc": 3.37,
+      "thin_share": 10.38,
+      "ordinary_share": 89.62,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550381-2 10x.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 11.73,
+      "thin_share": 11.7,
+      "ordinary_share": 88.3,
+      "in_val_holdout": false
+    },
+    {
+      "file": "2550382-1 10x.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 37.97,
+      "thin_share": 6.04,
+      "ordinary_share": 93.96,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3042.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 68.31,
+      "thin_share": 5.7,
+      "ordinary_share": 94.3,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3048.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 49.7,
+      "thin_share": 5.11,
+      "ordinary_share": 94.89,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3051.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 47.09,
+      "thin_share": 9.46,
+      "ordinary_share": 90.54,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3052.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 60.83,
+      "thin_share": 6.84,
+      "ordinary_share": 93.16,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3053.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 37.96,
+      "thin_share": 3.51,
+      "ordinary_share": 96.49,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN3056.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 42.28,
+      "thin_share": 14.01,
+      "ordinary_share": 85.99,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN3057.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 39.31,
+      "thin_share": 17.69,
+      "ordinary_share": 82.31,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN3066.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 43.0,
+      "thin_share": 13.63,
+      "ordinary_share": 86.37,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4695.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 52.86,
+      "thin_share": 7.05,
+      "ordinary_share": 92.95,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4708.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 18.26,
+      "thin_share": 0.54,
+      "ordinary_share": 99.46,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN4714.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 38.91,
+      "thin_share": 10.07,
+      "ordinary_share": 89.93,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4715.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 14.84,
+      "thin_share": 4.46,
+      "ordinary_share": 95.54,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4717.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 90.7,
+      "thin_share": 2.7,
+      "ordinary_share": 97.3,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4718.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 79.01,
+      "thin_share": 8.61,
+      "ordinary_share": 91.39,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4719.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 92.26,
+      "thin_share": 12.36,
+      "ordinary_share": 87.64,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN4720.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 41.29,
+      "thin_share": 2.59,
+      "ordinary_share": 97.41,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4721.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 37.63,
+      "thin_share": 0.81,
+      "ordinary_share": 99.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4727.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 74.5,
+      "thin_share": 2.2,
+      "ordinary_share": 97.8,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4728.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 75.44,
+      "thin_share": 2.7,
+      "ordinary_share": 97.3,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4730.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 81.44,
+      "thin_share": 3.93,
+      "ordinary_share": 96.07,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4731.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 58.06,
+      "thin_share": 1.4,
+      "ordinary_share": 98.6,
+      "in_val_holdout": true
+    },
+    {
+      "file": "DSCN4732.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 40.27,
+      "thin_share": 1.78,
+      "ordinary_share": 98.22,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4733.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 30.74,
+      "thin_share": 6.18,
+      "ordinary_share": 93.82,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4734.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 54.39,
+      "thin_share": 10.02,
+      "ordinary_share": 89.98,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4735.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 52.65,
+      "thin_share": 4.81,
+      "ordinary_share": 95.19,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4754.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 83.22,
+      "thin_share": 2.68,
+      "ordinary_share": 97.32,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN4755.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 84.86,
+      "thin_share": 3.18,
+      "ordinary_share": 96.82,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5032.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 25.58,
+      "thin_share": 7.46,
+      "ordinary_share": 92.54,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5180.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 66.95,
+      "thin_share": 7.23,
+      "ordinary_share": 92.77,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5183.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 47.15,
+      "thin_share": 6.44,
+      "ordinary_share": 93.56,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5185.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 37.28,
+      "thin_share": 4.49,
+      "ordinary_share": 95.51,
+      "in_val_holdout": false
+    },
+    {
+      "file": "DSCN5186.JPG",
+      "truth": "оталькованная",
+      "predicted": "оталькованная",
+      "pct_talc": 37.38,
+      "thin_share": 4.84,
+      "ordinary_share": 95.16,
+      "in_val_holdout": true
+    }
+  ]
+}

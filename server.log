@@ -1,0 +1,26 @@
+INFO:     Started server process [5320]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58170 - "GET /api/health HTTP/1.1" 200 OK
+[inference] loaded trained model from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\best_model.pt (val fg_f1=0.591) on cuda
+[inference] loaded grade classifier from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\grade_tree.joblib
+INFO:     127.0.0.1:58179 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58198 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58302 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58303 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58601 - "POST /api/corrections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58601 - "POST /api/corrections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58601 - "POST /api/corrections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58821 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59253 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59267 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59267 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59269 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59270 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59270 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59276 - "POST /api/corrections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59292 - "POST /api/recompute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59318 - "POST /api/analyze/pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59321 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59320 - "POST /api/analyze/pdf HTTP/1.1" 200 OK

@@ -1,0 +1,60 @@
+[р€дова€] 68 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\–€довые руды
+[inference] loaded trained model from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\best_model.pt (val fg_f1=0.681) on cuda
+  20/68
+  40/68
+  60/68
+  68/68
+[труднообогатима€] 68 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\“руднообогатимые руды
+  20/68
+  40/68
+  60/68
+  68/68
+[оталькованна€] 42 images from C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\‘ото руд по сортам. ч1\ќталькованные руды
+  20/42
+  40/42
+  42/42
+Extracted features for 178 images in 169s -> C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\grade_features.json
+
+5-fold cross-validation (depth=3):
+  fold 1: macro F1 = 0.703
+  fold 2: macro F1 = 0.739
+  fold 3: macro F1 = 0.757
+  fold 4: macro F1 = 0.769
+  fold 5: macro F1 = 0.565
+  CV mean macro F1 = 0.707 +- 0.074
+
+Val-holdout (18 images): macro F1 = 0.604
+  р€дова€: 0.364
+  труднообогатима€: 0.615
+  оталькованна€: 0.833
+
+Final tree on all data (fit quality, optimistic): macro F1 = 0.815
+  р€дова€: 0.795
+  труднообогатима€: 0.722
+  оталькованна€: 0.927
+
+Learned rules (human-readable):
+|--- pct_talc <= 11.52
+|   |--- small_grain_ore_share <= 10.85
+|   |   |--- thin_share_of_ore <= 6.77
+|   |   |   |--- class: р€дова€
+|   |   |--- thin_share_of_ore >  6.77
+|   |   |   |--- class: р€дова€
+|   |--- small_grain_ore_share >  10.85
+|   |   |--- median_grain_area <= 33.50
+|   |   |   |--- class: р€дова€
+|   |   |--- median_grain_area >  33.50
+|   |   |   |--- class: труднообогатима€
+|--- pct_talc >  11.52
+|   |--- pct_talc <= 37.14
+|   |   |--- thin_share_of_ore <= 5.83
+|   |   |   |--- class: р€дова€
+|   |   |--- thin_share_of_ore >  5.83
+|   |   |   |--- class: оталькованна€
+|   |--- pct_talc >  37.14
+|   |   |--- class: оталькованна€
+
+Talc hard-override threshold (estimated share): >37.3%
+
+Saved grade classifier to C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\checkpoints\grade_tree.joblib
+inference.py will pick it up automatically (restart the web server).

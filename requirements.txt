@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-multipart
+opencv-python-headless
+numpy
+scipy
+scikit-learn
+
+# training (install torch separately -- see README note below)
+segmentation-models-pytorch
+albumentations
+tqdm
+
+# GPU PyTorch is NOT installed from this file -- run this once, matching your
+# CUDA-capable GPU driver (works for GTX 1660 Super / any CUDA 12.1-compatible card):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121

@@ -1,0 +1,49 @@
+Gold talc pairs found: 42 (looked in C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Оталькованные руды\Области оталькования)
+C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Рядовые руды: 68 files
+C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч1\Труднообогатимые руды: 68 files
+C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч2\оталькованные: using 87 files (weak positive talc)
+C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч2\рядовые: using 200 files
+C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\raw_own_dataset\Фото руд по сортам. ч2\тонкие: using 200 files
+
+Total entries to process: 665
+
+[train] processing 598 entries...
+  20/598 (processed 0, skipped 20 already-done)
+  40/598 (processed 0, skipped 40 already-done)
+  60/598 (processed 0, skipped 60 already-done)
+  80/598 (processed 0, skipped 80 already-done)
+  100/598 (processed 0, skipped 100 already-done)
+  120/598 (processed 0, skipped 120 already-done)
+  140/598 (processed 0, skipped 140 already-done)
+  160/598 (processed 0, skipped 160 already-done)
+  180/598 (processed 0, skipped 180 already-done)
+  200/598 (processed 0, skipped 200 already-done)
+  220/598 (processed 3, skipped 217 already-done)
+  240/598 (processed 16, skipped 224 already-done)
+  260/598 (processed 27, skipped 233 already-done)
+  280/598 (processed 41, skipped 239 already-done)
+  300/598 (processed 55, skipped 245 already-done)
+  320/598 (processed 69, skipped 251 already-done)
+  340/598 (processed 81, skipped 259 already-done)
+  360/598 (processed 90, skipped 270 already-done)
+  380/598 (processed 105, skipped 275 already-done)
+  400/598 (processed 116, skipped 284 already-done)
+  420/598 (processed 129, skipped 291 already-done)
+  440/598 (processed 140, skipped 300 already-done)
+  460/598 (processed 150, skipped 310 already-done)
+  480/598 (processed 161, skipped 319 already-done)
+  500/598 (processed 169, skipped 331 already-done)
+  520/598 (processed 178, skipped 342 already-done)
+  540/598 (processed 186, skipped 354 already-done)
+  560/598 (processed 197, skipped 363 already-done)
+  580/598 (processed 204, skipped 376 already-done)
+  598/598 (processed 210, skipped 388 already-done)
+
+[val] processing 67 entries...
+  20/67 (processed 19, skipped 1 already-done)
+  40/67 (processed 38, skipped 2 already-done)
+  60/67 (processed 57, skipped 3 already-done)
+  67/67 (processed 64, skipped 3 already-done)
+
+Done. 665 samples written under C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\own_dataset_prepared
+Manifest: C:\Users\vladi\OneDrive\Desktop\hakatone\webapp\own_dataset_prepared\dataset_manifest.csv
