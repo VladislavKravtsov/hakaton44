@@ -1,3 +1,1 @@
 # hakaton44
-......
-HelloWord("Print")
